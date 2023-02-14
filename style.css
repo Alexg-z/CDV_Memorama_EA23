@@ -18,6 +18,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -30,6 +31,7 @@ div {
 .area-tarjeta,
 .tarjeta,
 .cara {
+    cursor: pointer;
     width: var(--w);
     min-width: 80px;
     height: var(--h);
@@ -38,9 +40,10 @@ div {
 .tarjeta {
     position: relative;
     transform-style: preserve-3d;
+    animation: iniciar 5s;
 }
 
-.area-tarjeta:hover .tarjeta {
+.area-tarjeta .tarjeta {
     transform: rotateY(180deg);
 }
 
@@ -66,8 +69,18 @@ div {
 
 /* Nuevo juego */
 .nuevojuego{
+    cursor: pointer;
     background: linear-gradient(orange, darkorange);
     padding: 20px;
     border-radius: 50px;
     border:white 5px solid;
+}
+
+@keyframes iniciar {
+    20%, 90% {
+        transform: rotateY(180deg);
+    }
+    0%, 100% {
+        transform: rotateY(0deg);
+    }
 }
